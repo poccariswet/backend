@@ -1,0 +1,40 @@
+hash: bdbe81f917e6aa67f7adeae9da2e89eb38fdd557719e03cc240f82fe0cf08fa6
+updated: 2017-09-03T22:15:30.583174017+09:00
+imports:
+- name: github.com/dgrijalva/jwt-go
+  version: a539ee1a749a2b895533f979515ac7e6e0f5b650
+- name: github.com/go-sql-driver/mysql
+  version: 26471af196a17ee75a22e6481b5a5897fb16b081
+- name: github.com/gocraft/dbr
+  version: 6125e71d4f0d6e8a6b5390e9d278f9b5179a27a9
+  subpackages:
+  - dialect
+- name: github.com/labstack/echo
+  version: f2bc6802be74c688212fa0e81e08f0e59b180f73
+  subpackages:
+  - middleware
+- name: github.com/labstack/gommon
+  version: 779b8a8b9850a97acba6a3fe20feb628c39e17c1
+  subpackages:
+  - bytes
+  - color
+  - log
+  - random
+- name: github.com/mattn/go-colorable
+  version: ad5389df28cdac544c99bd7b9161a0b5b6ca9d1b
+- name: github.com/mattn/go-isatty
+  version: fc9e8d8ef48496124e79ae0df75490096eccf6fe
+- name: github.com/valyala/bytebufferpool
+  version: e746df99fe4a3986f4d4f79e13c1e0117ce9c2f7
+- name: github.com/valyala/fasttemplate
+  version: dcecefd839c4193db0d35b88ec65b4c12d360ab0
+- name: golang.org/x/crypto
+  version: 81e90905daefcd6fd217b62423c0908922eadb30
+  subpackages:
+  - acme
+  - acme/autocert
+- name: golang.org/x/sys
+  version: 7ddbeae9ae08c6a06a59597f0c9edbc5ff2444ce
+  subpackages:
+  - unix
+testImports: []
