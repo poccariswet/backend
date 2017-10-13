@@ -20,7 +20,7 @@ func main() {
 	// Routing
 	e.GET("/book/pullbookinfo/:title", PullBookInfo)
 	e.GET("/book/pullbooksinfo/all", PullBooksInfo)
-	e.GET("/book/pullbooksinfo/keyword/:title", PullBooksKeyword)
+	e.GET("/book/pullbooksinfo/keyword/:key", PullBooksKeyword)
 	e.PUT("/book/updatebookinfo", UpdateBookInfo)
 	e.POST("/book/postbookinfo", PostBookInfo)
 	e.DELETE("/book/deletebookinfo/:id", DeleteBookInfo)
