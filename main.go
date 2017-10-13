@@ -18,11 +18,12 @@ func main() {
 
 	e.Use(middleware.CORS())
 	// Routing
-	e.GET("/book/pullbookinfo/:title", Pull_Book_Info)
-	e.GET("/book/pullbooksinfo/all", Pull_Books_Info)
-	e.PUT("/book/updatebookinfo", Update_Book_Info)
-	e.POST("/book/postbookinfo", Post_Book_Info)
-	e.DELETE("/book/deletebookinfo/:id", Delete_Book_Info)
+	e.GET("/book/pullbookinfo/:title", PullBookInfo)
+	e.GET("/book/pullbooksinfo/all", PullBooksInfo)
+	e.GET("/book/pullbooksinfo/keyword/:title", PullBooksKeyword)
+	e.PUT("/book/updatebookinfo", UpdateBookInfo)
+	e.POST("/book/postbookinfo", PostBookInfo)
+	e.DELETE("/book/deletebookinfo/:id", DeleteBookInfo)
 
 	e.Logger.Fatal(e.Start(":9090"))
 }

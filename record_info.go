@@ -16,7 +16,7 @@ type Book struct {
 	Pic    string `db:"pic"`
 }
 
-func Pull_Book_Info(c echo.Context) error {
+func PullBookInfo(c echo.Context) error {
 	var book Book
 	//	id, _ := strconv.Atoi(c.Param("id"))
 	title := c.Param("title")
@@ -25,14 +25,14 @@ func Pull_Book_Info(c echo.Context) error {
 	return c.JSON(http.StatusOK, book)
 }
 
-func Pull_Books_Info(c echo.Context) error {
+func PullBooksInfo(c echo.Context) error {
 	var books []Book
 	sess.Select("*").From(tablename).Load(&books)
 
 	return c.JSON(http.StatusOK, books)
 }
 
-func Update_Book_Info(c echo.Context) error {
+func UpdateBookInfo(c echo.Context) error {
 	book := new(Book)
 	if err := c.Bind(book); err != nil {
 		return err
@@ -44,7 +44,7 @@ func Update_Book_Info(c echo.Context) error {
 	return c.NoContent(http.StatusOK)
 }
 
-func Post_Book_Info(c echo.Context) error {
+func PostBookInfo(c echo.Context) error {
 	book := new(Book)
 	if err := c.Bind(book); err != nil {
 		return err
@@ -55,7 +55,7 @@ func Post_Book_Info(c echo.Context) error {
 	return c.NoContent(http.StatusOK)
 }
 
-func Delete_Book_Info(c echo.Context) error {
+func DeleteBookInfo(c echo.Context) error {
 	id, _ := strconv.Atoi(c.Param("id"))
 	sess.DeleteFrom(tablename).Where("id = ?", id).Exec()
 
