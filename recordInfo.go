@@ -32,6 +32,15 @@ func PullBooksInfo(c echo.Context) error {
 	return c.JSON(http.StatusOK, books)
 }
 
+func PullBooksKeyword(c echo.Context) error {
+	//select * from bookstate WHERE title like '%Go言語%';
+	var books []Book
+	key := c.Param("key")
+	sess.QueryRow("select * from 'bookstate' where title like %%go%%;", key).Scan(&books)
+
+	return c.JSON(http.StatusOK, books)
+}
+
 func UpdateBookInfo(c echo.Context) error {
 	book := new(Book)
 	if err := c.Bind(book); err != nil {
