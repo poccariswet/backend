@@ -18,7 +18,6 @@ type Book struct {
 
 func PullBookInfo(c echo.Context) error {
 	var book Book
-	//	id, _ := strconv.Atoi(c.Param("id"))
 	title := c.Param("title")
 	sess.Select("*").From(tablename).Where("title = ?", title).Load(&book)
 
@@ -36,7 +35,7 @@ func PullBooksKeyword(c echo.Context) error {
 	//select * from bookstate WHERE title like '%Go言語%';
 	var books []Book
 	key := c.Param("key")
-	sess.QueryRow("select * from 'bookstate' where title like %%go%%;", key).Scan(&books)
+	sess.QueryRow("select * from 'bookstate' where title like %%%s%%;", key).Scan(&books)
 
 	return c.JSON(http.StatusOK, books)
 }
