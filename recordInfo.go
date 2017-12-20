@@ -32,10 +32,10 @@ func PullBooksInfo(c echo.Context) error {
 }
 
 func PullBooksKeyword(c echo.Context) error {
-	//select * from bookstate WHERE title like '%Go言語%';
 	var books []Book
 	key := c.Param("key")
-	sess.QueryRow("select * from 'bookstate' where title like %%%s%%;", key).Scan(&books)
+	query := "SELECT * FROM " + tablename + " WHERE title LIKE '%" + key + "%'"
+	sess.QueryRow(query).Scan(&books)
 
 	return c.JSON(http.StatusOK, books)
 }
